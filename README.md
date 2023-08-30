@@ -1,82 +1,103 @@
-# **Lab1: Cluster Creation, Data Ingestion and Exploration**
+# **Lab1: KQL Database Creation, Data Ingestion and Exploration**
 
 This Lab is organized into the following 4 Challenges:
 | Challenge | Description | Est. Time |
 |--|--|--|
-| [Challenge 1](#challenge-1-create-an-adx-cluster)| Create a free ADX cluster | 15 Min|
+| [Challenge 1](#challenge-1-create-a-kql-database)| Create a KQL Database | 5 Min|
 | [Challenge 2](#challenge-2-ingest-data-from-azure-storage-account)| Load Data from Azure Storage| 30 Min|
 | [Challenge 3](#challenge-3-starting-with-the-basics-of-kql)| Starting with the basics of KQL| 1 Hour|
 | [Challenge 4](#challenge-4-explore-and-transform-data)| Explore and Transform Data | 45 min|
 
 Each challenge has a set of tasks that need to be completed in order to move on to the next challenge. It is advisable to complete the challenges and tasks in the prescribed order.
 
-- [Go to ADX-In-A-Day HomePage](https://github.com/Azure/ADX-in-a-Day)
+- [Go to Fabric-RTA-In-A-Day HomePage](https://github.com/Azure/Fabric-RTA-in-a-Day)
 
-## **Earn a digital badge!**
+## **Challenge 1: Create a KQL Database**
 
-In order to receive the "ADX-In-A-Day" digital badge, you will need to complete the tasks marked with ✅ in Lab 1 & Lab 2. Submit your answers for Lab 1 and Lab 2 quizzes in order to receive the "ADX in a Day" digital badge. You may edit your answers after or try again.
+Assuming you already have Microsoft Fabric enabled workspace in your Power BI tenant, you can create KQL Database. Each database has tables. Then you can ingest data into a database so that you can run queries against it.
 
-| :information_source: **Note**    |
-|:---------------------------|
-| **For Lab 1, please submit the results for the tasks marked with ✅ in the following link**: [Quiz ADX in A Day Lab 1](https://forms.office.com/r/qZ0yghDwyb) |
-
-| :information_source: **Note**    |
-|:---------------------------|
-| **Please allow us 5 working days to issue the badge**|
-
-![ADX in a day Badge](/assets/images/badge.png "ADX in a day Badge")
-
----
-
-## **Challenge 1: Create an ADX cluster**
-
-To use Azure Data Explorer (ADX), you first have to create a free ADX cluster, and create one or more databases in that cluster. Each database has tables. Then you can ingest data into a database so that you can run queries against it.
-
-In this Challenge, you will create a Free cluster and a database. You will run simple KQL query in Kusto Web Explorer (KWE UI).
+In this Challenge, you will create a KQL database. You will run simple KQL query in Fabric.
 
 **Tasks:**
 
-- [**Task 1:** Create an ADX cluster and Database](#challenge-1-task-1-create-an-adx-cluster-and-database)
-- [**Task 2:** Review the free cluster home page and the Azure Data Explorer Web UI](#challenge-1-task-2-review-the-free-cluster-home-page-and-the-azure-data-explorer-web-ui)
-- [**Task 3:** Write your first Kusto Query Language (KQL) query](#challenge-1-task-3-write-your-first-kusto-query-language-kql-query)
+- [**Task 1:** Create a KQL Database](#challenge-1-task-1-create-a-kql-database)
+- [**Task 2:** Query data in a KQL queryset](#challenge-1-task-2-query-data-in-a-kql-queryset)
 
 **Expected Learning Outcomes:**
 
-- Create and work with Free ADX cluster.
+- Create and work with KQL database.
 
-### **Challenge 1, Task 1: Create an ADX cluster and Database**
+### **Challenge 1, Task 1: Create a KQL Database**
 
-1. Create your free cluster and database here: [Free ADX Cluster](https://aka.ms/kustofree). If you want to open the ADX Web UI in another Tab click on the link holding down the ``CTRL`` Key.
+## Prerequisites
 
-    ![Create Cluster and Database](/assets/images/CreateNewCluster.png "Create Cluster and Database")
+* A workspace with a Microsoft Fabric-enabled capacity
+
+## Create a new KQL database
+
+1. Select **New** > **KQL Database**.
+
+   ![Create KQL Database](/assets/images/create-database.png "Create KQL Database")
+
+1. Enter your database name, then select **Create**.
+
+    ![New KQL Database](/assets/images/new-database.png "New KQL Database")
+
+The KQL database has now been created within the context of the selected workspace.
+
+## Database details
+
+The main page of your KQL database shows an overview of the contents in your database. The following table lists the information you'll see.
+
+![Database Details](/assets/images/database-dashboard.png "Database Database")
+
+|Card | Item| Description|
+|---|---|---|
+|**Database details**|
+| | Created by | User name of person who created the database.|
+| | Region | Shows the region of the data and services.|
+| | Created on | Date of database creation.|
+| | Last ingestion | Date on which data was ingested last into the database.|
+| | Query URI | URI that can be used for sending/ running queries.|
+| | Ingestion URI | URI that can be used for programmatic ingestion.|
+| | OneLake folder | OneLake folder path that can be used for creating shortcuts. You can also activate and deactivate data copy to OneLake.|
+| **Size**|
+| | Compressed| Total size of compressed data.|
+| | Original size | Total size of uncompressed data.|
+| | Compression ratio | Compression ratio of the data.|
+|**Top tables**|  
+| | Name | Lists the names of tables in your database. Select a table to see more information.|
+| | Size | Database size in megabytes. The tables are listed in a descending order according to the data size.|
+|**Most active users**|
+| | Name | User name of most active users in the database.|
+| | Queries run last month | The number of queries run per user in the last month.|
+|**Recently updated functions**
+| | |  Lists the function name and the time it was last updated.|
+|**Recently used Querysets**|
+| | | Lists the recently used KQL queryset and the time it was last accessed.|
+|**Recently created data connections**
+| | | Lists the data connection and the time it was created.|
+
+## Access an existing KQL database
+
+To access your existing KQL databases:
+
+1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
+
+   ![Access Existing Database](/assets/images/access-existing-database-1.png "Access Existing Database")
+
+1. Select **Filter** on the right side of the ribbon > **KQL Database**.
+
+   ![Access Existing Database using Filter](/assets/images/access-existing-database-2.png "Access Existing Database using FIlter")
+
+1. Select the desired database.
   
-### **Challenge 1, Task 2: Review the free cluster home page and the Azure Data Explorer Web UI**
-
-1. Have a look at the cluster home page.
-
-2. Click on the Icon **My Cluster** in the left navigation pane.
-
-    ![Create free cluster](/assets/images/free_cluster_create_db.png "Create free cluster")
-
-    On the page **My Cluster**, you'll see the following:
-    - Your cluster's name, the option to upgrade to a full cluster, and the option to delete the cluster.
-    - Cluster details like: cluster's location, and URI links for connecting to your cluster via APIs or other tools.
-    - Quick actions you can take to get started with your cluster.
-    - A list of databases in your cluster.
-
-3. Click on the Button **Create** in the tile **Create Database**
-
-4. Enter a name for the database in field **Database**. As an example for the name you can use ``FreeTestDB``.
-
-| :information_source: **Note**    |
-|:---------------------------|
-| If you already have a free cluster and just want to create a new database for this lab, use the **Create** button in the Create database tile. |
   
-### **Challenge 1, Task 3: Write your first Kusto Query Language (KQL) query**
+### **Challenge 1, Task 2: Query data in a KQL queryset**
   
 ***What is a Kusto query?***
 
-Azure Data Explorer provides a web experience that enables you to connect to your Azure Data Explorer clusters and write and run Kusto Query Language queries. The web experience is available in the Azure portal and as a stand-alone web application, the Azure Data Explorer Web UI, which we will use later.
+Fabric provides a web experience that enables you to connect to your KQL Database and write and run Kusto Query Language queries. The web experience is available in the Azure portal and as a stand-alone web application, the Azure Data Explorer Web UI, which we will use later.
 
 A *Kusto query* is a read-only request to process data and return results. The request is stated in plain text that's easy to read. A Kusto query has one or more query statements and returns data in a tabular or graph format.
 
