@@ -97,14 +97,44 @@ To access your existing KQL databases:
   
 ***What is a Kusto query?***
 
-Fabric provides a web experience that enables you to connect to your KQL Database and write and run Kusto Query Language queries. The web experience is available in the Azure portal and as a stand-alone web application, the Azure Data Explorer Web UI, which we will use later.
+Fabric provides a web experience that enables you to connect to your KQL Database and write and run Kusto Query Language queries. 
 
 A *Kusto query* is a read-only request to process data and return results. The request is stated in plain text that's easy to read. A Kusto query has one or more query statements and returns data in a tabular or graph format.
 
-In the next Challenge, we'll ingest data to the cluster, and then learn the most important concepts in KQL and write interesting queries. In this task, you will write a basic query to get an understanding of the environment.
+In the next Challenge, we'll ingest data to the KQL Database, and then learn the most important concepts in KQL and write interesting queries. In this task, you will write a basic query to get an understanding of the environment.
 
-In this example, you'll use the Azure Data Explorer web interface as a query editor.
+In this example, you'll use the KQL queryset as a query editor.
 
+The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.  Each tab in the KQL queryset can be associated with a different KQL database, and lets your save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
+
+The KQL Queryset uses the Kusto Query language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+
+## Create a KQL queryset
+
+The KQL Queryset exists within the context of a workspace. A new KQL queryset is always associated with the workspace you're using when you create it.
+
+1. Browse to the desired workspace.
+1. Select **+New** > **KQL Queryset**
+
+
+    ![Create a KQL queryset](/assets/images/new-queryset.png "Screenshot of adding a new KQL queryset from workspace homepage.")
+
+1. Enter a unique name. You can use alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
+
+   ![Name a KQL queryset](/assets/images/queryset-name.png "Screenshot of adding name to queryset.")
+
+    > You can create multiple KQL Querysets in a single workspace.
+
+1. Select **Create**
+1. Now you can write a simple KQL query:
+
+    ```kql
+       print "Hello World"
+    ```
+1. Highlight the line with the code and hit the **Run** button. The query will be executed and its result can be seen in the result grid at the bottom of the page.
+
+   ![Hello world KQL query](/assets/images/Hello-world-query.png "Screenshot of Hello World KQL query.")
+   
 Kusto Query Language can also be used in other services that are built on-top of Azure Data Explorer, like:
 
 - [Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs)
@@ -114,25 +144,6 @@ Kusto Query Language can also be used in other services that are built on-top of
 - [Microsoft Defender for Cloud](https://www.microsoft.com/en-us/security/business/cloud-security/microsoft-defender-cloud)
 - [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?tabs=net)
   
-1. We can see our cluster and the database that we created. If you followd the steps above the database is named `FreeTestDB`.
-  
-2. To run KQL queries, you must select the **Query** button on the Free Cluster page.
-
-    ![Query Button on the Free Cluster Page](/assets/images/free_cluster_query.png "Query Button on the Free Cluster Page")
-  
-3. Now you can write a simple KQL query:
-
-    ```kql
-       print "Hello World"
-    ```
-
-4. Hit the **Run** button. The query will be executed and its result can be seen in the result grid at the bottom of the page.
-  
-      ![Hello World](/assets/images/hello_world.png "Hello World")
-
-      | :information_source: **Note**    |
-      |:---------------------------|
-      | Windows users can also download [**Kusto Explorer**](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-explorer), a desktop client to run the queries and benefit from advanced features available in the client. |
 
 ## **Challenge 2: Ingest data from Azure Storage Account**
   
