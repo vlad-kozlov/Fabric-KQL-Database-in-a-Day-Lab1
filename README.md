@@ -181,40 +181,40 @@ KQL Database supports several ingestion methods, including Eventstream, Fabric P
 
 You need to analyze the system logs for Contoso, which are stored in Azure blob storage.
 
-1. Go back to the **My Cluster** page, click the **Ingest** button in the tile **Ingest Data**.
+1. Go back to the KQL Database, select the **Get Data** from the menu.
   
-      ![Ingest Data Button](/assets/images/data_ingest.png "Ingest Data Button")
+    ![Get data](/assets/images/IngestFromBlobContainer.png "Screenshot of get data menu.")
 
-2. Make sure the cluster and the Database fields are correct. In our example the cluster is named ``MyFreeCluster`` and the database is named ``ADX in a day``. Select the option **Existing table**.
+3. Select the option **Existing table**.
 
-      ![Ingest Data Wizard](/assets/images/ingest_table.png "Ingest Data Wizard")
+   ![Get data](/assets/images/selectexistingtable.png "Screenshot of get existing table.")
   
     | :information_source: **Note**    |
     |:---------------------------|
     | We used an example table name as ``logsRaw`` here. You can give any name to your table but be sure to use it in all your queries going forward. |
   
-3. Ingest from Storage:
+5. Ingest from Storage:
 Select **Blob container** as the **Source type** in the **Source** tab. As **Ingestion type** you can leave the default selection **One-Time**. For **Select source** you can use the default value **Add URL** because we will add a SAS Url next.
 
-4. In the **Link to source**, paste the following SAS ([*Shared Access Signature*](https://learn.microsoft.com/en-us/shows/inside-azure-for-it/introduction-to-sas-shared-access-signature)) URL of the blob storage. SAS URL is a way to provide limited, time-bound access to Azure storage resources such as Blobs.
+6. In the **Link to source**, paste the following SAS ([*Shared Access Signature*](https://learn.microsoft.com/en-us/shows/inside-azure-for-it/introduction-to-sas-shared-access-signature)) URL of the blob storage. SAS URL is a way to provide limited, time-bound access to Azure storage resources such as Blobs.
 
     ```kql
     https://logsbenchmark00.blob.core.windows.net/logsbenchmark-onegb/2014/?sp=rl&st=2022-08-18T00:00:00Z&se=2030-01-01T00:00:00Z&spr=https&sv=2021-06-08&sr=c&sig=5pjOow5An3%2BTs5mZ%2FyosJBPtDvV7%2FXfDO8pLEeeylVc%3D
     ```
 
-5. In the list **Schema defining file** select a file. This file is used to determine the schema of the data. One file is autoselected unless you want to change that. In our example it does not matter which file you choose because all files have the same structure, so you can stick with the autoselected file and click **Next: Schema**.
+7. In the list **Schema defining file** select a file. This file is used to determine the schema of the data. One file is autoselected unless you want to change that. In our example it does not matter which file you choose because all files have the same structure, so you can stick with the autoselected file and click **Next: Schema**.
 
     ![Ingest Data from storage](/assets/images/ingest_from_storage.png "Ingest Data from storage")
 
-6. Under Data format, make sure you select **Keep current table schema** and deselect **Ignore the first record**. Click on **Next: Start ingestion**.
+8. Under Data format, make sure you select **Keep current table schema** and deselect **Ignore the first record**. Click on **Next: Start ingestion**.
   
     ![Use schema from ingested data](/assets/images/ingest_from_storage_schema.png "Use schema from ingested data")
   
-7. Wait for the ingestion to be completed, and click **Close**.
+9. Wait for the ingestion to be completed, and click **Close**.
 
     ![Ingestion in progress](/assets/images/ingestion_completed.png "Ingestion in progress")
   
-8. Go to the **Query** page. Run the following KQL query to verify that data was ingested to the table.
+10. Go to the **Query** page. Run the following KQL query to verify that data was ingested to the table.
 
     ```kql
       logsRaw
