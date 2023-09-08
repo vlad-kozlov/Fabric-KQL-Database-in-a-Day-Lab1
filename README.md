@@ -183,7 +183,7 @@ You need to analyze the system logs for Contoso, which are stored in Azure blob 
 
 1. Go back to the KQL Database, select the **Get Data** from the menu.
   
-    ![Get data](/assets/images/IngestFromBlobContainer.png "Screenshot of get data menu.")
+    ![Get data](/assets/images/IngestFromBlobContainer_rta.png "Screenshot of get data menu.")
 
 3. Select the option **Existing table**.
 
@@ -208,13 +208,13 @@ Select **Blob container** as the **Source type** in the **Source** tab. As **Ing
 
 8. Under Data format, make sure you select **Keep current table schema** and deselect **Ignore the first record**. Click on **Next: Start ingestion**.
   
-    ![Use schema from ingested data](/assets/images/ingest_from_storage_schema.png "Use schema from ingested data")
+    ![Use schema from ingested data](/assets/images/ingest_from_storage_schema_rta.png "Use schema from ingested data")
   
 9. Wait for the ingestion to be completed, and click **Close**.
 
-    ![Ingestion in progress](/assets/images/ingestion_completed.png "Ingestion in progress")
+    ![Ingestion in progress](/assets/images/ingestion_completed_rta.png "Ingestion in progress")
   
-10. Go to the **Query** page. Run the following KQL query to verify that data was ingested to the table.
+10. Go to previously created KQL queryset. Run the following KQL query to verify that data was ingested to the table.
 
     ```kql
       logsRaw
