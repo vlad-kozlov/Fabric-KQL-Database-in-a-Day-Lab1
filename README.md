@@ -147,9 +147,9 @@ Kusto Query Language can also be used in other services that are built on-top of
 
 ## **Challenge 2: Ingest data from Azure Storage Account**
   
-Data ingestion to ADX is the process used to load data records from one or more sources into a table in your ADX cluster. Once ingested, the data becomes available for query.
+Data ingestion to KQL Database is the process used to load data records from one or more sources into a table. Once ingested, the data becomes available for query.
 
-ADX supports several ingestion methods, including ingestion tools, connectors and plugins, Azure managed pipelines, programmatic ingestion using SDKs, and direct access to ingestion.
+KQL Database supports several ingestion methods, including Eventstream, Fabric Pipeline, and Fabric Dataflow. Also available with Azure Data Factory and Event Hubs.
 
 **Tasks:**
 
@@ -158,11 +158,11 @@ ADX supports several ingestion methods, including ingestion tools, connectors an
 
 **Expected Learning Outcomes:**
 
-- Ingest data using one-click ingestion from Azure Blob Storage to your ADX cluster.
+- Ingest data using one-click ingestion from Azure Blob Storage to your KQL Database.
 
 ### **Challenge 2, Task 1: Create the raw table - logsRaw**
 
-1. Go to the **Query** tab and run the following command to create our table:
+1. Go to previously created KQL queryset and run the following command to create our table:
 
     ```kql
     .create table logsRaw(
