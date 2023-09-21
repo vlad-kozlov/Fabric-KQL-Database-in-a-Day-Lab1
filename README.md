@@ -135,7 +135,7 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
 
    ![Hello world KQL query](/assets/images/Hello-world-query.png "Screenshot of Hello World KQL query.")
    
-Kusto Query Language can also be used in other services that are built on-top of Azure Data Explorer, like:
+Kusto Query Language can also be used in other services that are built on-top of Kusto query Engine, like:
 
 - [Azure Monitor Logs](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-platform-logs)
 - [Azure Sentinel](https://learn.microsoft.com/en-us/azure/sentinel/overview)
@@ -273,7 +273,7 @@ This query has a single tabular expression statement. The statement begins with 
 
 ### **Challenge 3, Task 0 : Journey from SQL to KQL!**
 
-For all the SQL pros out there, Azure data explorer allows a subset of TSQL queries. Try running the following SQL query in web UI
+For all the SQL pros out there, KQL Database allows a subset of TSQL queries. Try running the following SQL query in web UI
 
 ```SQL
 SELECT COUNT() FROM logsRaw
@@ -394,7 +394,7 @@ You are investigating an incident and wish to review only several columns of the
 
 **References:**
 
-- [`project` operator - Azure Data Explorer | Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/projectoperator)
+- [`project` operator - Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/projectoperator)
 
 ### **Challenge 3, Task 4: Filter the output ✅**
 
