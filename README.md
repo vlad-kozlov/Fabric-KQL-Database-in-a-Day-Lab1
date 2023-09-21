@@ -330,7 +330,7 @@ In this task, you will see some KQL examples. For this task, we will use the tab
     | summarize min(Timestamp), max(Timestamp)
     ```
 
-Azure Data Explorer provides a set of system data types that define all the types of data that can be stored.
+KQL Database provides a set of system data types that define all the types of data that can be stored.
 
 Some data types for example are: `string`, `int`, `decimal`, `GUID`, `bool`, `datetime`.
 
@@ -524,14 +524,14 @@ You assume that the incident being investigated has a connection to the ingestio
 
 **References:**
 
-- [`bin()` - Azure Data Explorer | Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/binfunction)
+- [`bin()` - KQL Scalar functions](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/binfunction)
 - [`summarize` operator](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/summarizeoperator)
 
 ### **Challenge 3, Task 11: Shortcuts**
 
-Purpose of this task is to expose some cool productivity features of Azure Data Explorer Web Interface. This task is not evaluated.
+Purpose of this task is to expose some cool productivity features of KQL Databse Web Interface. This task is not evaluated.
 
-There are many keyboard shortcuts available in ADX Web UI and Kusto Explorer to increase productivity while working with KQL.
+There are many keyboard shortcuts available in KQL Databse Web UI and Kusto Explorer to increase productivity while working with KQL.
 
 Below are a few examples
 
@@ -708,7 +708,7 @@ In this task, we will use an `update policy` to filter the raw data in the `logs
 
 **References:**
 
-- [Kusto update policy - Azure Data Explorer | Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/updatepolicy)
-- [Kusto Ingest from Storage | Microsoft Docs](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/data-ingestion/ingest-from-storage)
+- [Kusto update policy - Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/updatepolicy)
+- [Kusto Ingest from Storage - Microsoft Docs](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/data-ingestion/ingest-from-storage)
 
-🎉 Congrats! You've completed ADX in a Day Lab 1. Keep going with [**Lab 2: Advanced KQL, Policies and Visualization**](https://github.com/Azure/ADX-in-a-Day-Lab2)
+🎉 Congrats! You've completed RTA in a Day Lab 1. Keep going with [**Lab 2: Advanced KQL, Policies and Visualization**](https://github.com/Azure/ADX-in-a-Day-Lab2)
