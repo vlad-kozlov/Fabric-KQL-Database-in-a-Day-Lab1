@@ -10,7 +10,22 @@ This Lab is organized into the following 4 Challenges:
 
 Each challenge has a set of tasks that need to be completed in order to move on to the next challenge. It is advisable to complete the challenges and tasks in the prescribed order.
 
-- [Go to Fabric-RTA-In-A-Day HomePage](https://github.com/Azure/Fabric-RTA-in-a-Day)
+- [Go to Fabric-KQL-Database-In-A-Day HomePage](https://github.com/Azure/Fabric-KQL-Database-in-a-Day)
+## **Earn a digital badge!**
+
+In order to receive the "KQL-Database-In-A-Day" digital badge, you will need to complete the tasks marked with ✅ in Lab 1 & Lab 2. Submit your answers for Lab 1 and Lab 2 quizzes in order to receive the "KQL Database in a Day" digital badge. You may edit your answers after or try again.
+
+| :information_source: **Note**    |
+|:---------------------------|
+| **For Lab 1, please submit the results for the tasks marked with ✅ in the following link**: [Quiz KQL Database in A Day Lab 1](https://forms.office.com/r/qZ0yghDwyb) |
+
+| :information_source: **Note**    |
+|:---------------------------|
+| **Please allow us 5 working days to issue the badge**|
+
+![KQL Database in a day Badge](/assets/images/KQLDatabaseBadge.png "KQL Database in a day Badge")
+
+---
 
 ## **Challenge 1: Create a KQL Database**
 
@@ -711,4 +726,4 @@ In this task, we will use an `update policy` to filter the raw data in the `logs
 - [Kusto update policy - Microsoft Docs](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/updatepolicy)
 - [Kusto Ingest from Storage - Microsoft Docs](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/data-ingestion/ingest-from-storage)
 
-🎉 Congrats! You've completed RTA in a Day Lab 1. Keep going with [**Lab 2: Advanced KQL, Policies and Visualization**](https://github.com/Azure/ADX-in-a-Day-Lab2)
+🎉 Congrats! You've completed RTA in a Day Lab 1. Keep going with [**Lab 2: Advanced KQL, Policies and Visualization**](https://github.com/Azure/KQL-Database-in-a-Day-Lab2)
